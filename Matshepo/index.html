@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BONTLE FASHION HOUSE | Johannesburg</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #b1834e;
+            --black: #0a0a0a;
+            --white: #ffffff;
+            --soft-grey: #fafafa;
+            --font-main: 'Montserrat', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        body, html { margin: 0; padding: 0; scroll-behavior: smooth; background: var(--white); }
+        body { font-family: var(--font-main); color: var(--black); line-height: 1.6; }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(255, 255, 255, 0.98);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .nav-logo-top {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: var(--black);
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--black);
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            margin-left: 40px;
+            font-weight: 300;
+            transition: 0.3s;
+        }
+        
+        .nav-links a:hover { color: var(--gold); }
+
+        /* --- Home Section --- */
+        #home {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&q=80&w=2000') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .logo-text {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: white;
+        }
+
+        .logo-text span { font-size: 1.4rem; margin: 0 10px; font-weight: 400; }
+
+        .logo-curve {
+            width: 120px;
+            height: 45px;
+            border: 2px solid transparent;
+            border-bottom-color: white;
+            border-radius: 50%;
+            margin: -25px auto 0;
+        }
+
+        #home h1 { 
+            font-size: 3rem; 
+            letter-spacing: 12px; 
+            margin: 15px 0; 
+            font-weight: 200; 
+            text-transform: uppercase;
+        }
+
+        .hero-pricing {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 40px;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            max-width: 500px; 
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .hero-pricing h3 { font-size: 0.75rem; letter-spacing: 4px; color: var(--gold); text-align: center; text-transform: uppercase; margin-bottom: 20px;}
+        .price-line { display: flex; justify-content: space-between; margin: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; font-size: 0.9rem; }
+
+        /* --- NEW POLICY STYLES --- */
+        .hero-policy-box {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        .policy-item {
+            margin-bottom: 15px;
+        }
+        .policy-item h4 {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin: 0 0 5px 0;
+        }
+        .policy-item p {
+            font-size: 0.75rem;
+            margin: 0;
+            opacity: 0.9;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        /* --- Gallery Sections --- */
+        section.content-area { padding: 100px 10%; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-family: var(--font-serif); font-size: 3rem; font-style: italic; font-weight: 400; }
+
+        .large-gallery { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 40px; 
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .large-gallery img { 
+            width: 100%; 
+            height: auto; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.4s ease;
+        }
+        
+        .large-gallery img:hover { transform: translateY(-10px); }
+
+        /* --- Booking Section --- */
+        #booking { padding: 100px 10%; background: var(--soft-grey); }
+        .booking-box { display: grid; grid-template-columns: 1fr 1fr; background: white; box-shadow: 0 30px 60px rgba(0,0,0,0.05); max-width: 1100px; margin: 0 auto; }
+
+        .contact-content { padding: 60px; border-left: 5px solid var(--gold); }
+        .dark-panel { background: #111; color: white; padding: 60px; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+
+        .btn-elegant { 
+            display: block;
+            padding: 18px; 
+            text-decoration: none; 
+            color: white; 
+            font-size: 0.75rem; 
+            letter-spacing: 3px; 
+            text-transform: uppercase; 
+            border: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+        .btn-elegant:hover { background: var(--gold); border-color: var(--gold); }
+
+        footer { text-align: center; padding: 60px; font-size: 0.7rem; letter-spacing: 3px; color: #888; text-transform: uppercase; }
+
+        @media (max-width: 1024px) {
+            .booking-box { grid-template-columns: 1fr; }
+            #home h1 { font-size: 2rem; }
+            nav { padding: 20px; flex-direction: column; }
+            .nav-links { margin-top: 15px; }
+            .nav-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home" class="nav-logo-top">Bontle Fashion House</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">Our Story</a>
+            <a href="#process">Process</a>
+            <a href="#booking">Bookings</a>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="logo-container">
+            <div class="logo-text">b<span>y</span>B</div>
+            <div class="logo-curve"></div>
+        </div>
+        <h1>BONTLE FASHION HOUSE</h1>
+        <p style="font-family: var(--font-serif); font-style: italic; font-size: 1.2rem; letter-spacing: 2px;">Rooted in culture, designed for elegance</p>
+
+        <div class="hero-pricing">
+            <h3>Private Session Fees</h3>
+            <div class="price-line"><span>Consultation (Virtual/Physical)</span> <span>R200</span></div>
+            <div class="price-line"><span>Garment Fitting Session</span> <span>R100</span></div>
+            <p style="font-size: 0.65rem; text-align: center; margin-top: 15px; opacity: 0.8; letter-spacing: 2px; text-transform: uppercase;">30 Minute Private Sessions</p>
+
+            <div class="hero-policy-box">
+                <div class="policy-item">
+                    <h4>Non-Refundable Policy</h4>
+                    <p>All fees are required to secure your appointment and are strictly non-refundable.</p>
+                </div>
+                <div class="policy-item" style="margin-bottom: 0;">
+                    <h4>Fitting Etiquette</h4>
+                    <p>To protect our luxury fabrics, please refrain from wearing heavy makeup or body oils.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="content-area">
+        <div class="section-header">
+            <h2>Who We Are</h2>
+        </div>
+        <div class="large-gallery">
+            <img src="purpose.jpg" alt="Our Purpose">
+            <img src="stand-for.jpg" alt="What We Stand For">
+            <img src="promise.jpg" alt="Our Promise">
+        </div>
+    </section>
+
+    <section id="process" class="content-area" style="background-color: var(--soft-grey);">
+        <div class="section-header">
+            <h2>How We Work</h2>
+        </div>
+        <div class="large-gallery">
+            <img src="procedures.jpg" alt="Procedures and Reminders">
+            <img src="custom-1.jpg" alt="Custom Design Step 1">
+            <img src="custome-2.jpg" alt="Custom Design Step 2">
+            <img src="fittings-1.jpg" alt="Fitting Etiquette 1">
+            <img src="fittings-2.jpg" alt="Fitting Etiquette 2">
+            <img src="final.jpg" alt="Final Policy">
+        </div>
+    </section>
+
+    <section id="booking">
+        <div class="booking-box">
+            <div class="contact-content">
+                <h4 style="color: var(--gold); letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 10px;">GET IN TOUCH</h4>
+                <h2 style="font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 30px;">Book Your Private Session</h2>
+                <p><strong>WhatsApp & Call:</strong> +27 69 940 3530</p>
+                <p><strong>Instagram:</strong> @bybontle.m</p>
+                <p><strong>Location:</strong> Johannesburg, South Africa</p>
+            </div>
+            <div class="dark-panel">
+                <p style="font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; margin-bottom: 25px;">Start Your Journey</p>
+                <a href="https://wa.me/27699403530" class="btn-elegant">WhatsApp Booking</a>
+                <a href="https://www.instagram.com/bybontle.m" class="btn-elegant">Instagram DM</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>&copy; 2026 BONTLE FASHION HOUSE | Johannesburg</footer>
+
+</body>
+</html>
